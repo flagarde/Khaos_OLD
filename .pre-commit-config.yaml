@@ -81,3 +81,10 @@ repos:
     args: [--autofix, --indent, '2']
   - id: pretty-format-toml
   - id: pretty-format-ini
+
+- repo: https://gitlab.com/daverona/pre-commit/cpp
+  rev: 0.8.0
+  hooks:
+  - id: clang-format
+  - id: cpplint
+  - id: docker-cppcheck
