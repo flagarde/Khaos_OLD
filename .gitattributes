@@ -1,6 +1,7 @@
 # Handle line endings automatically for files detected as text
 # and leave all files detected as binary untouched.
 *     text=auto
+*     whitespace=blank-at-eol,space-before-tab,tab-in-indent,trailing-space,-blank-at-eof,tabwidth=2
 
 # Sources
 *.c     text diff=c
