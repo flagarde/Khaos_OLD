@@ -57,3 +57,12 @@ repos:
     hooks:
       - id: markdownlint
         args: ['--config=.markdownlint.yml','scan']
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.13
+    hooks:
+      - id: forbid-crlf
+      - id: remove-crlf
+      - id: forbid-tabs
+      - id: remove-tabs
+        args: [ '--whitespaces-count', '2' ]
