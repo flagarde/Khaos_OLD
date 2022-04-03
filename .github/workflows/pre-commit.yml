@@ -1,0 +1,36 @@
+name: pre-commit
+
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - 'docs/**'
+    branches: [main]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: '🐍 Setup python'
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: 'Setup CMake'
+        uses: jwlawson/actions-setup-cmake@v1.12
+        with:
+          cmake-version: '3.16.x'
+          github-api-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 'Install packages'
+        run: sudo apt-get install clang-tidy cppcheck iwyu clang clang-format
+
+      - name: 'Install packages with pip'
+        run: pip install --user cpplint lizard
+
+      - name: '🔧 Configure'
+        run: cmake -S . -B ./build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON -DBUILD_DOCS=OFF -DBUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=./install -DCMAKE_NUMBER_JOBS=2 -DCMAKE_NUMBER_JOBS_TESTS=1
+
+      - uses: pre-commit/action@v2.0.3
