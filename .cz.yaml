@@ -1,4 +1,2 @@
 commitizen:
   name: cz_conventional_commits
-  tag_format: v$major.$minor.$patch$prerelease
-  version: 0.0.1
