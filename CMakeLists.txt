@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 include(GetCMakeMM)
-cmmm(VERSION 2.2 PROVIDER github REPOSITORY flagarde/CMakeMM VERBOSITY VERBOSE DESTINATION CMakeMM)
+cmmm(VERSION 2.2 REPOSITORY flagarde/CMakeMM VERBOSITY VERBOSE DESTINATION CMakeMM)
 
-cmmm_modules_list(PROVIDER github REPOSITORY "flagarde/CMakeCM")
+cmmm_modules_list(REPOSITORY "flagarde/CMakeCM")
 
 option(BUILD_TESTS "Build the tests" ON)
 
