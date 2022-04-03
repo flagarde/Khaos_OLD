@@ -93,9 +93,9 @@ repos:
   hooks:
   - id: clang-format
   - id: clang-tidy
-    args: [-Bbuild, -S., -DCMMM_TIMEOUT=30, -DCMMM_INACTIVITY_TIMEOUT=30, -DCMMM_PROVIDER=gitlab]
+    args: [-Bbuild, -S., -DCMMM_TIMEOUT=30, -DCMMM_INACTIVITY_TIMEOUT=30]
   - id: cppcheck
-    args: [-Bbuild, -S., -DCMMM_TIMEOUT=30, -DCMMM_INACTIVITY_TIMEOUT=30, -DCMMM_PROVIDER=gitlab]
+    args: [-Bbuild, -S., -DCMMM_TIMEOUT=30, -DCMMM_INACTIVITY_TIMEOUT=30]
 
 - repo: https://gitlab.com/daverona/pre-commit/cpp
   rev: 0.8.0
