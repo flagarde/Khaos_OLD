@@ -97,4 +97,4 @@ repos:
   rev: 0.8.0
   hooks:
   - id: cpplint
-  - id: docker-cppcheck
+  - id: cppcheck

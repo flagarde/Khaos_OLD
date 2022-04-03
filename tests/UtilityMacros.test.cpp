@@ -1,0 +1,17 @@
+// Copyright 2022 flagarde
+
+#include "khaos/UtilityMacros.h"
+
+#include <doctest/doctest.h>
+
+#define HELLO_WORLD() Hello world
+#define HELLO()       Hello
+#define WORLD()       world
+
+TEST_CASE("Test KHAOS_STRINGIFY") { CHECK_EQ(KHAOS_STRINGIFY(HELLO_WORLD()), "HELLO_WORLD()"); }
+
+TEST_CASE("Test KHAOS_EXPANDED_STRINGIFY") { CHECK_EQ(KHAOS_EXPANDED_STRINGIFY(HELLO_WORLD()), "Hello world"); }
+
+TEST_CASE("Test KHAOS_CONCATENATE") { CHECK_EQ(KHAOS_EXPANDED_STRINGIFY(KHAOS_CONCATENATE(a, b)), "ab"); }
+
+TEST_CASE("Test KHAOS_EXPANDED_CONCATENATE") { CHECK_EQ(KHAOS_EXPANDED_STRINGIFY(KHAOS_EXPANDED_CONCATENATE(HELLO(), WORLD())), "Helloworld"); }
