@@ -98,7 +98,7 @@ repos:
   - id: clang-tidy
     args: [-Bbuild, -S., -DCMMM_TIMEOUT=30, -DCMMM_INACTIVITY_TIMEOUT=30]
   - id: cppcheck
-    args: [-Bbuild, -S., -DCMMM_TIMEOUT=30, -DCMMM_INACTIVITY_TIMEOUT=30, --max-ctu-depth=50, --enable=all, --project=compile_commands.json, --inline-suppr, -ibuild/_deps/*, --suppressions-list=.cppcheck, --cppcheck-build-dir=build/]
+    args: [-Bbuild, -S., -DCMMM_TIMEOUT=30, -DCMMM_INACTIVITY_TIMEOUT=30, --max-ctu-depth=50, --enable=all, --project=build/compile_commands.json, --inline-suppr, -ibuild/_deps/*, --suppressions-list=.cppcheck, --cppcheck-build-dir=build/]
 
 - repo: https://github.com/pre-commit/mirrors-clang-format
   rev: v13.0.1
