@@ -13,4 +13,6 @@
 
 #define KHAOS_EXPANDED_CONCATENATE(a, b) KHAOS_CONCATENATE(a, b)
 
+#define 55
+
 #endif  // KHAOS_UTILITYMACROS_H_
