@@ -17,7 +17,7 @@ jobs:
       run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -S . -B ./build
 
     - name: Run include-what-you-use
-      uses: EmilGedda/include-what-you-use-action@v1
+      uses: external-packages/include-what-you-use-action@v2
       with:
         compilation-database-path: ./build
         output-format: iwyu     # Or 'clang'
