@@ -21,4 +21,12 @@ jobs:
       with:
         compilation-database-path: ./build
         output-format: iwyu     # Or 'clang'
-        no-error: 'false'
+        no-error: 'true'
+
+    - name: Run static analysis
+      uses: JacobDomagala/StaticAnalysis@v0.0.4
+      with:
+        # (Optional) clang-tidy args
+        clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type'
+        # (Optional) cppcheck args
+        cppcheck_args: --enable=all --suppress=missingInclude
