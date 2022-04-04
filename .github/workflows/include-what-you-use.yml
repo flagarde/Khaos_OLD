@@ -13,9 +13,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@v0.0.4
-
+  cppchceck:
+    name: cppcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        persist-credentials: false
+    - uses: linuxdeepin/action-cppcheck@main
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        repository: ${{ github.repository }}
+        pull_request_id: ${{ github.event.pull_request.number }}
     #- name: Generate compilation database
     #  run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -S . -B ./build
 
