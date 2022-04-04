@@ -1,0 +1,24 @@
+name: include-what-you-use
+
+on:
+  pull_request:
+  push:
+    paths-ignore:
+    - docs/**
+    branches: [main]
+
+jobs:
+  include-what-you-use:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Generate compilation database
+      run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -S . -B ./build
+
+    - name: Run include-what-you-use
+      uses: EmilGedda/include-what-you-use-action@v1
+      with:
+        compilation-database-path: ./build
+        output-format: iwyu     # Or 'clang'
+        no-error: 'false'
