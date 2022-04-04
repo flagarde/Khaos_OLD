@@ -4,4 +4,7 @@
 #define KHAOS_VERSION() (((@Khaos_VERSION_MAJOR@) % 100) * 10000000) + (((@Khaos_VERSION_MINOR@) % 100) * 100000) + ((@Khaos_VERSION_PATCH@) % 100000)
 #define KHAOS_VERSION_TWEAK() (@Khaos_VERSION_TWEAK@ % 100000)
 
+
+#define toto 55
+
 #endif //KHAOS_KHAOSVERSION_H_
