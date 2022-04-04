@@ -25,7 +25,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
-        pull_request_id: 0
+        pull_request_id: ${{ github.event.pull_request.number }}
     #- name: Generate compilation database
     #  run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -S . -B ./build
 
