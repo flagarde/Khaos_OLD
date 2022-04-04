@@ -9,7 +9,7 @@ cmmm_modules_list(REPOSITORY "flagarde/CMakeCM")
 
 option(BUILD_TESTS "Build the tests" ON)
 
-project(Khaos VERSION 0.0.1 DESCRIPTION "" HOMEPAGE_URL "https://github.com/flagarde/Khaos" LANGUAGES C CXX)
+project(Khaos VERSION 0.0.1.0 DESCRIPTION "" HOMEPAGE_URL "https://github.com/flagarde/Khaos" LANGUAGES C CXX)
 
 add_subdirectory(src)
 

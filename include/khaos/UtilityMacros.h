@@ -3,6 +3,8 @@
 #ifndef KHAOS_UTILITYMACROS_H_
 #define KHAOS_UTILITYMACROS_H_
 
+#include "khaos/KhaosVersion.h"
+
 #define KHAOS_STRINGIFY(s) #s
 
 #define KHAOS_EXPANDED_STRINGIFY(s) KHAOS_STRINGIFY(s)
