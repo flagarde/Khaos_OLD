@@ -77,7 +77,7 @@ jobs:
         docker run --rm dockcross/${{ matrix.image_name }} > ./dockcross-${{ matrix.image_name }}
         chmod +x ./dockcross-${{ matrix.image_name }}
     - name: Config CMakefile
-      run: ./dockcross-${{ matrix.image_name }} cmake -B dockcross-${{ matrix.image_name }} -S . -G Ninja -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+      run: ./dockcross-${{ matrix.image_name }} cmake -B ./dockcross-${{ matrix.image_name }} -S . -G Ninja -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
     - name: Build
       run: ./dockcross-${{ matrix.image_name }} ninja -C dockcross-${{ matrix.image_name }}
     - name: Test
